@@ -98,11 +98,23 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
             <Box sx={{ flexGrow: 1 }} />
 
             {isMobile ? (
-              <>
+              <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+                <IconButton
+                  onClick={toggleTheme}
+                  sx={{
+                    transition: 'transform 0.3s ease',
+                    '&:hover': { transform: 'rotate(180deg)' },
+                    color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                  }}
+                >
+                  {theme.palette.mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                </IconButton>
                 <IconButton
                   size="large"
-                  edge="start"
-                  color="inherit"
+                  edge="end"
+                  sx={{
+                    color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                  }}
                   aria-label="menu"
                   onClick={handleMenu}
                 >
@@ -127,100 +139,100 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
                       onClick={() => handleMenuItemClick(item.href)}
                       component="a"
                       href={item.href === '#top' ? undefined : item.href}
+                      sx={{
+                        color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                      }}
                     >
                       {item.label}
                     </MenuItem>
                   ))}
                 </Menu>
-              </>
-            ) : (
-              <Box sx={{ display: 'flex', gap: 2 }}>
-                {menuItems.map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Button
-                      href={item.href === '#top' ? undefined : item.href}
-                      onClick={() => item.href === '#top' && window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      color="inherit"
-                      sx={{
-                        position: 'relative',
-                        '&::after': {
-                          content: '""',
-                          position: 'absolute',
-                          width: '0%',
-                          height: '2px',
-                          bottom: 0,
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          background: 'linear-gradient(90deg, #2563eb, #8b5cf6)',
-                          transition: 'width 0.3s ease-in-out',
-                        },
-                        '&:hover::after': {
-                          width: '100%',
-                        },
-                        color: theme.palette.text.primary,
-                        '&:hover': {
-                          color: theme.palette.primary.main,
-                        },
-                      }}
-                    >
-                      {item.label}
-                    </Button>
-                  </motion.div>
-                ))}
               </Box>
-            )}
+            ) : (
+              <>
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  {menuItems.map((item, index) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Button
+                        href={item.href === '#top' ? undefined : item.href}
+                        onClick={() => item.href === '#top' && window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        sx={{
+                          position: 'relative',
+                          '&::after': {
+                            content: '""',
+                            position: 'absolute',
+                            width: '0%',
+                            height: '2px',
+                            bottom: 0,
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            background: 'linear-gradient(90deg, #2563eb, #8b5cf6)',
+                            transition: 'width 0.3s ease-in-out',
+                          },
+                          '&:hover::after': {
+                            width: '100%',
+                          },
+                          color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                          '&:hover': {
+                            color: theme.palette.primary.main,
+                          },
+                        }}
+                      >
+                        {item.label}
+                      </Button>
+                    </motion.div>
+                  ))}
+                </Box>
 
-            <Box sx={{ display: 'flex', gap: 1, ml: 2 }}>
-              <IconButton
-                color="inherit"
-                onClick={toggleTheme}
-                sx={{
-                  transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'rotate(180deg)' },
-                  color: theme.palette.action.active,
-                }}
-              >
-                {theme.palette.mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </IconButton>
-              <IconButton
-                color="inherit"
-                href={personalInfo.socialLinks.github}
-                target="_blank"
-                sx={{ 
-                  '&:hover': { transform: 'translateY(-2px)' },
-                  color: theme.palette.action.active,
-                }}
-              >
-                <GithubIcon size={20} />
-              </IconButton>
-              <IconButton
-                color="inherit"
-                href={personalInfo.socialLinks.linkedin}
-                target="_blank"
-                sx={{ 
-                  '&:hover': { transform: 'translateY(-2px)' },
-                  color: theme.palette.action.active,
-                }}
-              >
-                <Linkedin size={20} />
-              </IconButton>
-              <IconButton
-                color="inherit"
-                href={personalInfo.socialLinks.twitter}
-                target="_blank"
-                sx={{ 
-                  '&:hover': { transform: 'translateY(-2px)' },
-                  color: theme.palette.action.active,
-                }}
-              >
-                <X size={20} />
-              </IconButton>
-            </Box>
+                <Box sx={{ display: 'flex', gap: 1, ml: 2 }}>
+                  <IconButton
+                    onClick={toggleTheme}
+                    sx={{
+                      transition: 'transform 0.3s ease',
+                      '&:hover': { transform: 'rotate(180deg)' },
+                      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                    }}
+                  >
+                    {theme.palette.mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                  </IconButton>
+                  <IconButton
+                    href={personalInfo.socialLinks.github}
+                    target="_blank"
+                    sx={{ 
+                      '&:hover': { transform: 'translateY(-2px)' },
+                      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                    }}
+                  >
+                    <GithubIcon size={20} />
+                  </IconButton>
+                  <IconButton
+                    href={personalInfo.socialLinks.linkedin}
+                    target="_blank"
+                    sx={{ 
+                      '&:hover': { transform: 'translateY(-2px)' },
+                      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                    }}
+                  >
+                    <Linkedin size={20} />
+                  </IconButton>
+                  <IconButton
+                    href={personalInfo.socialLinks.twitter}
+                    target="_blank"
+                    sx={{ 
+                      '&:hover': { transform: 'translateY(-2px)' },
+                      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+                    }}
+                  >
+                    <X size={20} />
+                  </IconButton>
+                </Box>
+              </>
+            )}
           </Toolbar>
         </Container>
       </AppBar>
