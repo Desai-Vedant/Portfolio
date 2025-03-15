@@ -56,5 +56,11 @@ export const projectsData = [
     image: 'https://raw.githubusercontent.com/Desai-Vedant/AIDesk/refs/heads/main/AIDesk.png',
     tags: ['Python', 'AI', 'Voice Recognition'],
     link: 'https://github.com/Desai-Vedant/AIDesk'
+  },{
+    title: 'Task Tracker',
+    description: 'A simple task tracker app built with MERN tech stack. It allows users to add, delete, and toggle tasks. The tasks are stored in MongoDB Atlas.',
+    image: 'https://raw.githubusercontent.com/Desai-Vedant/TaskTracker/0fcf379e180b7d6a61cde7c8be94e7374cc6e3c2/image/README/TaskTrackerPoster.png',
+    tags: ['MERN', 'React', 'MongoDB Atlas', 'Express.js'],
+    link: 'https://github.com/Desai-Vedant/TaskTracker'
   }
 ]; 
