@@ -63,7 +63,7 @@ export const Projects: React.FC = () => {
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    borderRadius: '16px',
+                    // borderRadius: '16px', // Removed to inherit 24px from MuiCard theme
                     overflow: 'hidden',
                     position: 'relative',
                     bgcolor: theme.palette.mode === 'dark' ? 'rgba(30, 41, 59, 0.8)' : theme.palette.background.paper,
@@ -105,6 +105,8 @@ export const Projects: React.FC = () => {
                       '&:hover': {
                         transform: 'scale(1.05)',
                       },
+                      borderTopLeftRadius: '24px', // Match Card's expected radius
+                      borderTopRightRadius: '24px', // Match Card's expected radius
                     }}
                   />
                   <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
@@ -129,7 +131,7 @@ export const Projects: React.FC = () => {
                           sx={{
                             px: 2,
                             py: 0.5,
-                            borderRadius: '50px',
+                            borderRadius: '9999px', // Standardized full-rounded
                             background: theme.palette.mode === 'dark'
                               ? 'linear-gradient(45deg, #60a5fa 30%, #a78bfa 90%)'
                               : 'linear-gradient(45deg, #2563eb 30%, #8b5cf6 90%)',
@@ -146,7 +148,7 @@ export const Projects: React.FC = () => {
                       href={project.link}
                       target="_blank"
                       sx={{
-                        borderRadius: '50px',
+                        borderRadius: '12px', // Standard button radius
                         textTransform: 'none',
                         borderColor: theme.palette.mode === 'dark' ? '#60a5fa' : '#2563eb',
                         color: theme.palette.mode === 'dark' ? '#60a5fa' : '#2563eb',

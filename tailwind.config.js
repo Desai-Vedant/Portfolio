@@ -38,6 +38,14 @@ export default {
         'soft-lg': '0 8px 16px rgba(0,0,0,0.05)',
         'soft-xl': '0 12px 24px rgba(0,0,0,0.05)',
       },
+      borderRadius: {
+        'sm': '0.25rem', // 4px
+        'md': '0.5rem',  // 8px
+        'lg': '0.75rem', // 12px
+        'xl': '1rem',    // 16px
+        '2xl': '1.5rem', // 24px
+        'full': '9999px',
+      },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',

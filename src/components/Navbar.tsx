@@ -69,6 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
             : 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(10px)',
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          borderRadius: 0,
         }}
       >
         <Container maxWidth="lg">
