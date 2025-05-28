@@ -91,13 +91,13 @@ const commonSettings: ThemeOptions = {
     },
   },
   shape: {
-    borderRadius: 16,
+    borderRadius: 16, // Changed from original value if different
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '12px',
+          borderRadius: '12px', // Changed from original value
           padding: '10px 24px',
           transition: 'all 0.2s ease-in-out',
           '&:hover': {
@@ -121,7 +121,7 @@ const commonSettings: ThemeOptions = {
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: '24px',
+          borderRadius: '24px', // Changed from original value
           transition: 'all 0.3s ease-in-out',
           '&:hover': {
             transform: 'translateY(-8px)',

@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
                 size="large"
                 endIcon={<ArrowRight />}
                 sx={{
-                  borderRadius: '50px',
+                  borderRadius: '9999px',
                   textTransform: 'none',
                   px: 4,
                   background: 'linear-gradient(45deg, #2563eb 30%, #8b5cf6 90%)',
@@ -114,7 +114,7 @@ export const Hero: React.FC = () => {
                       sx={{
                         textAlign: 'center',
                         p: 2,
-                        borderRadius: 2,
+                        borderRadius: '16px',
                         bgcolor: 'background.paper',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                         height: '100%',
@@ -180,7 +180,7 @@ export const Hero: React.FC = () => {
                 sx={{
                   width: '100%',
                   height: 'auto',
-                  borderRadius: '20px',
+                  borderRadius: '24px',
                   boxShadow: theme => theme.palette.mode === 'dark'
                     ? '0 20px 40px rgba(0,0,0,0.4)'
                     : '0 20px 40px rgba(0,0,0,0.1)',
@@ -208,7 +208,7 @@ export const Hero: React.FC = () => {
                 left: 20,
                 border: '2px dashed',
                 borderColor: 'primary.main',
-                borderRadius: '20px',
+                borderRadius: '24px',
                 opacity: 0.3,
                 zIndex: 1,
               }}

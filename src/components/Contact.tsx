@@ -214,7 +214,7 @@ This message was sent from the portfolio contact form.`,
                   onSubmit={handleSubmit}
                   sx={{
                     p: 4,
-                    borderRadius: 4,
+                    borderRadius: '24px', // Standardized to 24px
                     bgcolor: 'background.paper',
                     boxShadow: theme => theme.palette.mode === 'dark'
                       ? '0 4px 20px rgba(0, 0, 0, 0.3)'
@@ -321,6 +321,7 @@ This message was sent from the portfolio contact form.`,
                       sx={{
                         bgcolor: 'background.paper',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                        borderRadius: '9999px', // Fully rounded
                         '&:hover': {
                           bgcolor: 'background.paper',
                           transform: 'translateY(-4px)',
@@ -335,6 +336,7 @@ This message was sent from the portfolio contact form.`,
                       sx={{
                         bgcolor: 'background.paper',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                        borderRadius: '9999px', // Fully rounded
                         '&:hover': {
                           bgcolor: 'background.paper',
                           transform: 'translateY(-4px)',
@@ -349,6 +351,7 @@ This message was sent from the portfolio contact form.`,
                       sx={{
                         bgcolor: 'background.paper',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                        borderRadius: '9999px', // Fully rounded
                         '&:hover': {
                           bgcolor: 'background.paper',
                           transform: 'translateY(-4px)',
