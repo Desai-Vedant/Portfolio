@@ -50,12 +50,6 @@ export const Experience: React.FC = () => {
         return parts.join(' ');
     };
 
-    // Visual constants for perfect alignment
-    const LINE_X = 28; // px from the left edge of the timeline container to the vertical line center
-    const LINE_WIDTH = 2;
-    const DOT_SIZE = 14; // diameter in px
-    const CONTENT_GAP = 24; // space between line and content
-
     // Company-level summary (earliest start to latest end)
     const getCompanySummary = (roles: { startDate: string; endDate: string }[]) => {
         if (!roles.length) return '';
@@ -128,7 +122,7 @@ export const Experience: React.FC = () => {
                             mx: 'auto',
                         }}
                     >
-                        A LinkedIn-style timeline highlighting roles, durations, and skills.
+                        Find my work experience here!
                     </Typography>
                 </motion.div>
 
