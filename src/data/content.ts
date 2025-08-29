@@ -64,3 +64,46 @@ export const projectsData = [
     link: 'https://github.com/Desai-Vedant/TaskTracker'
   }
 ]; 
+
+// Types and sample data for Experience Section (LinkedIn-style timeline)
+export type ExperienceRole = {
+  title: string;
+  employmentType: string; // e.g., Full-time, Internship
+  startDate: string; // e.g., 'Jun 2025'
+  endDate: string; // e.g., 'Present' or 'Jun 2025'
+  description?: string;
+  skills?: string[];
+};
+
+export type ExperienceCompany = {
+  company: string;
+  location?: string; // 'Pune, Maharashtra, India · On-site'
+  logoUrl?: string; // Optional company logo URL; falls back to initials avatar
+  roles: ExperienceRole[];
+};
+
+export const experiencesData: ExperienceCompany[] = [
+  {
+    company: 'nCircle Tech',
+    location: 'Pune, Maharashtra, India · On-site',
+    // You can replace this with a real logo URL; an avatar fallback is used if empty
+    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcfytVrSFgoUYX-QLGDRr2JZDoAtzfnh1fw&s',
+    roles: [
+      {
+        title: 'Member of Technical Staff',
+        employmentType: 'Full-time',
+        startDate: 'Jun 2025',
+        endDate: 'Present',
+      },
+      {
+        title: 'Technical Intern',
+        employmentType: 'Internship',
+        startDate: 'Nov 2024',
+        endDate: 'Jun 2025',
+        description:
+          'Gained hands-on experience in full-stack web development with the MERN (MongoDB, Express.js, React, Node.js) stack. Explored and worked with REST APIs for efficient data retrieval.',
+        skills: ['Node.js', 'Express.js', 'React', 'MongoDB', 'REST APIs'],
+      },
+    ],
+  }
+];

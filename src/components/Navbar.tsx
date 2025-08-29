@@ -47,6 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
 
   const menuItems = [
     { label: 'Home', href: '#top' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
@@ -64,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
       <AppBar
         position="fixed"
         sx={{
-          bgcolor: theme.palette.mode === 'dark' 
+          bgcolor: theme.palette.mode === 'dark'
             ? 'rgba(15, 23, 42, 0.9)'
             : 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(10px)',
@@ -204,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
                   <IconButton
                     href={personalInfo.socialLinks.github}
                     target="_blank"
-                    sx={{ 
+                    sx={{
                       '&:hover': { transform: 'translateY(-2px)' },
                       color: theme.palette.mode === 'dark' ? '#fff' : '#000',
                     }}
@@ -214,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
                   <IconButton
                     href={personalInfo.socialLinks.linkedin}
                     target="_blank"
-                    sx={{ 
+                    sx={{
                       '&:hover': { transform: 'translateY(-2px)' },
                       color: theme.palette.mode === 'dark' ? '#fff' : '#000',
                     }}
@@ -224,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
                   <IconButton
                     href={personalInfo.socialLinks.twitter}
                     target="_blank"
-                    sx={{ 
+                    sx={{
                       '&:hover': { transform: 'translateY(-2px)' },
                       color: theme.palette.mode === 'dark' ? '#fff' : '#000',
                     }}

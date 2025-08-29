@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme, darkTheme } from './theme';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
+import { Experience } from './components/Experience';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 function App() {
@@ -16,11 +17,11 @@ function App() {
   });
 
   const { scrollYProgress } = useScroll();
-  
+
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    isDarkMode 
+    isDarkMode
       ? ['#0f172a', '#1e293b', '#0f172a']
       : ['#f8fafc', '#f1f5f9', '#e2e8f0']
   );
@@ -65,6 +66,7 @@ function App() {
       <motion.div style={{ backgroundColor, minHeight: '100vh' }}>
         <Navbar toggleTheme={toggleTheme} />
         <Hero />
+        <Experience />
         <Skills />
         <Projects />
         <Contact />
